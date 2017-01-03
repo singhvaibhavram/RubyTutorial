@@ -1,0 +1,4 @@
+// A hash like structure
+{"accounts" : "read",
+ "policies": "write",
+ "users": "write"}
