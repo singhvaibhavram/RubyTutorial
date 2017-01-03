@@ -1,7 +1,19 @@
+# Creating module
+#now I have put a due to the naming convention. It's not an error in typing ;p 
+#modules need to end with able
+#so if a module is to be named 'eat' it has to be written as 'eatable'
+module Destructable
+  def destroy(anyObject)
+    puts "Object is destroyed"
+  end
+  # to use this method of the module in the user class I will have to include it otherwise I won't have access to the destroy method
+end
+
 # Creating Class
 # User
 class User
-  
+  # include module
+  include Destructable
   attr_accessor :name, :email
   #  Initialize method gets called everytime you create a new object
   def initialize(name, email)
@@ -62,3 +74,10 @@ puts Buyer.ancestors
 # Class Method :- Class method can be called directly called in the class without initiating any object
 # to run this class method you don't need an instance of user you can directly call the
 User.identify_yourself 
+
+# Dealing with modules
+# Module :- Module is similar to class but is bassically a collection of behaviour which the class can use via mixing, so you have to include the module in the class that you want to use but you cannot have an object of a module.
+# A module has to be mixed in a classand then the methods can be used in a module
+userModule = User.new("Rajul", "rajul@example.com")
+user.destroy("myname")
+# visit ruby-lang.org site ti lookup some methods and classes and modules and read them.
